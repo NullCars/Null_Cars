@@ -43,7 +43,7 @@ user interactions.
     ```
 2. Navigate to the project directory:
     ```bash
-    cd Null_Cars-main
+    cd Null_Cars
     ```
 3. Install dependencies:
     ```bash

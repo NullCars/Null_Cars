@@ -1,16 +1,15 @@
-import React, {useEffect} from 'react';
+// import React, {useEffect} from 'react';
 
 import useAuthentication from "../hooks/useAuthentication";
 
-import {useNavigate, Link, NavLink, useLocation} from "react-router-dom";
-import {Container, Row, Nav, Navbar, NavDropdown, Col, Button} from "react-bootstrap";
+import { Link, NavLink, useLocation} from "react-router-dom";
+import {Container, Nav, Navbar, Button} from "react-bootstrap";
 
 import Swal from "sweetalert2";
 
-import {IoLocation, IoLocationOutline} from "react-icons/io5";
+
 import {LiaCarSideSolid, LiaHandsHelpingSolid} from "react-icons/lia";
-import {BsTelephoneFill} from "react-icons/bs";
-import {GrMail} from "react-icons/gr";
+
 import {useSelector} from "react-redux";
 import {FaUser, FaUserPlus} from "react-icons/fa";
 import {RxSlash} from "react-icons/rx";

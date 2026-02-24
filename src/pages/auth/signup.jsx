@@ -2,16 +2,16 @@ import React, {useState} from "react"
 
 import useAuthentication from "../../hooks/useAuthentication";
 
-import { NavLink, useNavigate } from "react-router-dom"
+import { NavLink } from "react-router-dom"
 
-import {Alert, Button, Col, Container, Form, Row, Spinner} from "react-bootstrap"
+import {Alert, Button, Col, Container, Form, Row} from "react-bootstrap"
 import {loadingContent} from "../../components/general/general-components";
 
 const Signup = () => {
 
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
 
-    const {isLoading, message, signUpCall} = useAuthentication();
+    const {isLoading, message} = useAuthentication();
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -20,7 +20,7 @@ const Signup = () => {
         e.preventDefault();
 
         try{
-            const signUp = await signUpCall({email, password})
+            // const signUp = await signUpCall({email, password})
         }
         catch (e) {
 

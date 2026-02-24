@@ -2,14 +2,14 @@ import React, {useState} from 'react';
 
 import useAuthentication from "../../hooks/useAuthentication";
 
-import { NavLink, useNavigate } from "react-router-dom"
+import { NavLink } from "react-router-dom"
 
-import {Container, Row, Col, Form, Button, Alert, Spinner} from "react-bootstrap";
+import {Container, Row, Col, Form, Button, Alert} from "react-bootstrap";
 import {loadingContent} from "../../components/general/general-components";
 
 const Login = () => {
 
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
 
     const {isLoading, message, signInCall} = useAuthentication();
 
