@@ -218,7 +218,7 @@ const VehicleCars = () => {
     }
 
 
-    const handleImageChange = (event, index) => {
+    // const handleImageChange = (event, index) => {
         const file = event.target.files[0];
         if (file) {
             const reader = new FileReader();
