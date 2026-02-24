@@ -76,7 +76,7 @@ const CarOffers = () => {
                         cars && brands && models
                         ?
                             Object.entries(cars)
-                                .filter(([ value]) => value.carCount > 0)
+                                .filter(([key, value]) => value.carCount > 0)
                                 .map(([key, value]) => {
 
                                 let brand = brands[value.brandId];
