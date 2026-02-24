@@ -1,8 +1,8 @@
-import React, {useEffect, useRef, useState} from 'react';
-import {Accordion, Button, Form, InputGroup, useAccordionButton} from "react-bootstrap";
+import React, {useEffect, useState} from 'react';
+import {Accordion, Button, Form, InputGroup} from "react-bootstrap";
 
 import {ref, uploadBytesResumable, getDownloadURL} from "firebase/storage";
-import {doc, getDoc, setDoc} from "firebase/firestore";
+import {doc, setDoc} from "firebase/firestore";
 import {db, storage} from "../../config/firebase";
 import Swal from "sweetalert2";
 
@@ -24,7 +24,7 @@ const VehicleCars = () => {
 
     const [locations, setLocations] = useState(null);
 
-    const [imagePreviews, setImagePreviews] = useState({});
+    const [ setImagePreviews] = useState({});
 
 
 
@@ -43,7 +43,7 @@ const VehicleCars = () => {
 
         if (selectedValue && Object.values(models).length > 0) {
 
-            let currentModels = selectedValue && Object.values(models).find(i => i.brandId == selectedValue).models;
+            let currentModels = selectedValue && Object.values(models).find(i => i.brandId === selectedValue).models;
             setModelsByBrandId(currentModels);
         } else {
             setModelsByBrandId(null);
@@ -189,7 +189,7 @@ const VehicleCars = () => {
             Object.keys(copy).map((id, index) => {
 
                 copy[index] = copy[id];
-                if (index != id) delete copy[id];
+                if (index !== id) delete copy[id];
             })
 
             return copy;
@@ -260,8 +260,8 @@ const VehicleCars = () => {
                                 {
                                     Object.values(cars).map((item, index) => {
 
-                                        let currBrandName = item.brandId.length != 0 ? Object.values(brands)[item.brandId] : null;
-                                        let currModelsByBrandId = item.brandId.length != 0 ? Object.values(models).find(i => i.brandId == item.brandId).models : null;
+                                        let currBrandName = item.brandId.length !== 0 ? Object.values(brands)[item.brandId] : null;
+                                        let currModelsByBrandId = item.brandId.length !== 0 ? Object.values(models).find(i => i.brandId === item.brandId).models : null;
                                         let currModelName = currModelsByBrandId ? currModelsByBrandId[item.modelId] : null;
 
                                         return (
