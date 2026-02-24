@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from 'react';
 import {Col, Container, Row, Button} from "react-bootstrap";
-import {vehiclesData} from "../DATA/data.jsx";
 import {Link} from "react-router-dom";
 import {doc, getDoc} from "firebase/firestore";
 import {db} from "../config/firebase";
@@ -12,7 +11,7 @@ import 'react-lazy-load-image-component/src/effects/blur.css';
 
 const CarOffers = () => {
 
-    const [isLoading, setIsLoading] = useState(false);
+
 
     const [cars, setCars] = useState(null);
     const [brands, setBrands] = useState(null);
@@ -77,7 +76,7 @@ const CarOffers = () => {
                         cars && brands && models
                         ?
                             Object.entries(cars)
-                                .filter(([key, value]) => value.carCount > 0)
+                                .filter(([ value]) => value.carCount > 0)
                                 .map(([key, value]) => {
 
                                 let brand = brands[value.brandId];
